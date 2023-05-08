@@ -20,12 +20,25 @@ int main() {
     
 	while (pilihan != 4) {
         system("cls");
-		printf("\t========== MENU ==========\n");
-        printf("\t1. Tambah pembeli ke antrian\n");
-        printf("\t2. Tampilkan antrian pembeli\n");
-        printf("\t3. Cek Studio\n");
-        printf("\t4. Keluar\n");
-        printf("\tPilih menu: ");
+//		printf("\t========== MENU ==========\n");
+//        printf("\t1. Tambah pembeli ke antrian\n");
+//        printf("\t2. Tampilkan antrian pembeli\n");
+//        printf("\t3. Cek Studio\n");
+//        printf("\t4. Keluar\n");
+//        printf("\tPilih menu: ");
+		printf( "ษออออออออออออออออออออออออออออออออออออออออออออออออออป\n" );
+		printf ( "บ                    Cinema XXIX                   บ\n");
+		printf ( "ศออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
+        printf ( "ษออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
+		printf ( "บ                       MENU                       บ\n");
+		printf ( "บ                   ------------                   บ\n");
+		printf ( "บ1. Pesan Tiket                                    บ\n");
+		printf ( "บ2. List Antrian                                   บ\n");
+		printf ( "บ3. Cek Studio                                     บ\n");
+		printf ( "บ4. Keluar                                         บ\n");
+		printf ( "ศออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
+		printf ( "|======================================================================================================================|\n");
+		printf ( " Pilih : \n");
         scanf("%d", &pilihan);
 		
         switch (pilihan) {
@@ -34,32 +47,32 @@ int main() {
                 menu:
                 system("cls");
         		printf("\t========== FILM ==========\n");
-				printf("\t1. Avengers - Endgame (");
+				printf("\t1. Avengers - Endgame \n");
 				for (int i = 0; i < 3; i++) {
-				printf("[%d] %s: %s : %s",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
+				printf("\t[%d] %s: %s : %s\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
 				if (i != 2) {
-        			printf(" | ");
+        			printf("");
     				}
 				}
-				printf(")\n");
+				printf("\n");
 
-				printf("\t2. Spider-Man - No Way Home (");
+				printf("\t2. Spider-Man - No Way Home \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("[%d] %s: %s : %s",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
-        			printf(" | ");
+        			printf("");
     				}
 				}
-				printf(")\n");
+				printf("\n");
 
-				printf("\t3. Gatot Kaca (");
+				printf("\t3. Gatot Kaca \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("[%d] %s: %s : %s",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
-        			printf(" | ");
+        			printf("");
     				}
 				}
-				printf(")\n");
+				printf("\n");
 				printf("\t==================================\n");
 				printf("\tPilih Film:");
         		scanf("%d", &pilihan);
