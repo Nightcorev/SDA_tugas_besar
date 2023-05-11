@@ -49,7 +49,7 @@ int main() {
         		printf("\t========== FILM ==========\n");
 				printf("\t1. Avengers - Endgame \n");
 				for (int i = 0; i < 3; i++) {
-				printf("\t[%d] %s: %s : %s\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
+				printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
 				if (i != 2) {
         			printf("");
     				}
@@ -58,7 +58,7 @@ int main() {
 
 				printf("\t2. Spider-Man - No Way Home \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("\t[%d] %s: %s : %s\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
         			printf("");
     				}
@@ -67,7 +67,7 @@ int main() {
 
 				printf("\t3. Gatot Kaca \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("\t[%d] %s: %s : %s\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
         			printf("");
     				}
