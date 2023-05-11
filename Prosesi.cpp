@@ -4,15 +4,15 @@
 #include "bioskop.h"
 #include <time.h>
 
-void tambahPembeli(Loket *loket, int jumlah_tiket, char* nama_pembeli, int x, int pilihan, int stok_tiket[3][3]) {
+void tambahPembeli(Loket *loket, int jumlah_tiket, char* nama_pembeli, int x) {
     // Buat node baru untuk pembeli
     Pembeli *pembeli_baru = (Pembeli*) malloc(sizeof(Pembeli));
     strcpy(pembeli_baru->nama_pembeli, nama_pembeli);
 	pembeli_baru->jumlah_tiket = jumlah_tiket;
-    pembeli_baru->next = NULL;
+	strcpy(pembeli_baru->jadwal_pesan, loket->jadwal[x]);
+	strcpy(pembeli_baru->studio_pesan, loket->studio[x]);
+	pembeli_baru->next = NULL;
 	
-	stok_tiket[pilihan][x] = stok_tiket[pilihan][x] - jumlah_tiket;
-        // Jika stok tiket kurang dari jumlah tiket yang diminta
     // Cek apakah antrian kosong
     if (loket->head == NULL) {
         loket->head = pembeli_baru;
@@ -33,7 +33,6 @@ void hapusPembeli(Loket *loket) {
     } else {
         // Jika tidak kosong, hapus node pembeli pertama dari antrian
         Pembeli *hapus = loket->head;
-        Pembeli *tmp = loket->head;
 		loket->head = hapus->next;
         
         free(hapus);
@@ -54,14 +53,13 @@ void tampilAntrian(Loket *loket) {
         Pembeli *current = loket->head;
         printf("\tPembeli:");
         while (current != NULL) {
-        	printf(" %s(%d) -",current->nama_pembeli, current->jumlah_tiket);
+        	printf(" | %s(%d) | %s | %s | =>",current->nama_pembeli, current->jumlah_tiket, current->jadwal_pesan, current->studio_pesan);
             current = current->next;
         }
         printf("\n\t===================================\n");
 
     }
 }
-
 
 
 void update_loket_status(Loket *loket) {
@@ -82,6 +80,25 @@ void update_loket_status(Loket *loket) {
             strcpy(loket->status_loket[i], "offline");
         } else {
             strcpy(loket->status_loket[i], "online");
+        }
+    }
+    
+    for (int i = 0; i < 3; i++) {
+        if (strcmp("18:30", time_string) < 0 || strcmp("08:00", time_string) > 0) 
+		{
+            printf("\n\t\tbioskop tutup...");
+			exit(1);
+        } else {
+            break;
+        }
+    }
+    
+}
+
+void bioskop_isfull(Loket *loket) {
+    for (int i = 0; i < 3; i++) {
+        if (loket->stok_tiket[i] == 0) {
+            strcpy(loket->status_loket[i], "Penuh");
         }
     }
 }

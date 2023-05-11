@@ -7,6 +7,8 @@
 typedef struct pembeli {
     int jumlah_tiket;
     char nama_pembeli[100];
+    char jadwal_pesan[10];
+    char studio_pesan[10];
     struct pembeli *next;
 } Pembeli;
 
@@ -17,14 +19,16 @@ typedef struct loket {
     char status_loket[10][10];
     char jadwal[10][10];
     char studio[10][10];
+    int stok_tiket[3];
     Pembeli *head;
 } Loket;
 
 
 int compare_time(char* jadwal);
 void update_loket_status(Loket *loket);
-void tambahPembeli(Loket *loket, int jumlah_tiket, char* nama_pembeli, int x, int pilihan, int stok_tiket[4][3]);
+void tambahPembeli(Loket *loket, int jumlah_tiket, char* nama_pembeli, int x);
 void hapusPembeli(Loket *loket);
 void tampilAntrian(Loket *loket);
+void bioskop_isfull(Loket *loket);
 
 #endif
