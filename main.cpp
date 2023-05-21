@@ -14,6 +14,9 @@ int main() {
 	Loket loket3 = {"Ananda","Gatot Kaca",{"on", "on", "on"},{"10:00", "12:30", "16:00"}, {"studio3", "studio1", "studio2"},{50,50,50}, NULL};
 	int jumlah_tiket;
     char nama_pembeli[100];
+    float harga1 = 30.000;
+    float harga2 = 35.000;
+    float harga3 = 40.000;
 	int pilihan = 0, x, stok_tiket[4][3] = {{50,50,50},{50,50,50},{50,50,50}, {50,50,50}};
 	
 	
@@ -46,7 +49,7 @@ int main() {
         		printf("\t========== FILM ==========\n");
 				printf("\t1. Avengers - Endgame \n");
 				for (int i = 0; i < 3; i++) {
-				printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
+				printf("\t[%d] %s: %s : %s : Rp 30.000\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
 				if (i != 2) {
         			printf("");
     				}
@@ -55,7 +58,7 @@ int main() {
 
 				printf("\t2. Spider-Man - No Way Home \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s : Rp 35.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
         			printf("");
     				}
@@ -64,7 +67,7 @@ int main() {
 
 				printf("\t3. Gatot Kaca \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s : Rp 40.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
         			printf("");
     				}
@@ -86,6 +89,8 @@ int main() {
     				scanf("%s", nama_pembeli);
 					printf("\tMasukkan jumlah tiket yang dibeli: ");
     				scanf("%d", &jumlah_tiket);
+    				float total_harga1 = hitung_total_harga(harga1, jumlah_tiket);
+					printf("\tTotal harga:\t\tRp %.2f\n", total_harga1);
     				if (jumlah_tiket <= stok_tiket[pilihan][x]){
     					tambahPembeli(&loket1, jumlah_tiket, nama_pembeli, x, pilihan, stok_tiket);
 					}else{
@@ -104,6 +109,8 @@ int main() {
     				scanf("%s", nama_pembeli);
 					printf("\tMasukkan jumlah tiket yang dibeli: ");
     				scanf("%d", &jumlah_tiket);
+    				float total_harga2 = hitung_total_harga(harga2, jumlah_tiket);
+					printf("\tTotal harga:\t\tRp %.2f\n", total_harga2);
 					if (jumlah_tiket <= stok_tiket[pilihan][x]){
     					tambahPembeli(&loket2, jumlah_tiket, nama_pembeli, x, pilihan, stok_tiket);
 					}else{
@@ -122,6 +129,8 @@ int main() {
     				scanf("%s", nama_pembeli);
 					printf("\tMasukkan jumlah tiket yang dibeli: ");
     				scanf("%d", &jumlah_tiket);
+    				float total_harga1 = hitung_total_harga(harga3, jumlah_tiket);
+					printf("\tTotal harga:\t\tRp %.2f\n", total_harga3);
     				if (jumlah_tiket <= stok_tiket[pilihan][x]){
     					tambahPembeli(&loket3, jumlah_tiket, nama_pembeli, x, pilihan, stok_tiket);	
 					}else{
