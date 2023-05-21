@@ -103,3 +103,7 @@ void bioskop_isfull(Loket *loket) {
     }
 }
 
+float hitung_total_harga(float harga_tiket, int jumlah_tiket) {
+    float total_harga = harga_tiket * jumlah_tiket;
+    return total_harga;
+}
