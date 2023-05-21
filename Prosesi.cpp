@@ -63,7 +63,6 @@ void tampilAntrian(Loket *loket) {
 }
 
 
-
 void update_loket_status(Loket *loket) {
     time_t current_time;
     struct tm* time_info;
@@ -86,3 +85,7 @@ void update_loket_status(Loket *loket) {
     }
 }
 
+float hitung_total_harga(float harga_tiket, int jumlah_tiket) {
+    float total_harga = harga_tiket * jumlah_tiket;
+    return total_harga;
+}

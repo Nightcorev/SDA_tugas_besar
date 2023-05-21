@@ -7,6 +7,7 @@
 typedef struct pembeli {
     int jumlah_tiket;
     char nama_pembeli[100];
+    float total_Harga=25.000;
     struct pembeli *next;
 } Pembeli;
 
@@ -26,5 +27,6 @@ void update_loket_status(Loket *loket);
 void tambahPembeli(Loket *loket, int jumlah_tiket, char* nama_pembeli, int x, int pilihan, int stok_tiket[4][3]);
 void hapusPembeli(Loket *loket);
 void tampilAntrian(Loket *loket);
+float hitung_total_harga(float harga_tiket, int jumlah_tiket);
 
 #endif
