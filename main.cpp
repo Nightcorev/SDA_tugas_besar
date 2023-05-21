@@ -6,14 +6,14 @@
 
 int main() {
     // Inisialisasi data loket
-    Loket loket1 = {"Lita","Avengers - Endgame",{"on", "on", "on"},{"09:00", "13:00", "17:00"}, {"studio1", "studio3", "studio2"}, NULL};
-    Loket loket2 = {"Siska","Spider-Man - No Way Home", {"on", "on", "on"} , {"10:00", "14:00", "18:00"}, "studio2", "studio1", "studio3", NULL};
-	Loket loket3 = {"Ananda","Gatot Kaca",{"on", "on", "on"},{"11:00", "15:00", "19:00"}, "studio3", "studio2", "studio1", NULL};
+    //Avengers 3jam 30menit
+    //Spiderman 3 jam
+    //Gatot Kaca 2jam 30 menit
+    Loket loket1 = {"Lita","Avengers - Endgame",{"on", "on", "on"},{"09:00", "12:30", "15:30"}, {"studio1", "studio2", "studio3"},{50,50,50}, NULL};
+    Loket loket2 = {"Siska","Spider-Man - No Way Home", {"on", "on", "on"} , {"09:30", "12:30", "15:00"}, {"studio2", "studio3", "studio1"},{50,50,50}, NULL};
+	Loket loket3 = {"Ananda","Gatot Kaca",{"on", "on", "on"},{"10:00", "12:30", "16:00"}, {"studio3", "studio1", "studio2"},{50,50,50}, NULL};
 	int jumlah_tiket;
     char nama_pembeli[100];
-    float Harga1=30.000;
-    float Harga2=35.000;
-    float Harga3=40.000;
 	int pilihan = 0, x, stok_tiket[4][3] = {{50,50,50},{50,50,50},{50,50,50}, {50,50,50}};
 	
 	
@@ -23,25 +23,19 @@ int main() {
     
 	while (pilihan != 4) {
         system("cls");
-//		printf("\t========== MENU ==========\n");
-//        printf("\t1. Tambah pembeli ke antrian\n");
-//        printf("\t2. Tampilkan antrian pembeli\n");
-//        printf("\t3. Cek Studio\n");
-//        printf("\t4. Keluar\n");
-//        printf("\tPilih menu: ");
-		printf( "ษออออออออออออออออออออออออออออออออออออออออออออออออออป\n" );
-		printf ( "บ                    Cinema XXIX                   บ\n");
-		printf ( "ศออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
-        printf ( "ษออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
-		printf ( "บ                       MENU                       บ\n");
-		printf ( "บ                   ------------                   บ\n");
-		printf ( "บ1. Pesan Tiket                                    บ\n");
-		printf ( "บ2. List Antrian                                   บ\n");
-		printf ( "บ3. Cek Studio                                     บ\n");
-		printf ( "บ4. Keluar                                         บ\n");
-		printf ( "ศออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
-		printf ( "|======================================================================================================================|\n");
-		printf ( " Pilih : \n");
+		printf( "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอป\n" );
+		printf ( "๏ฟฝ                    Cinema XXIX                   ๏ฟฝ\n");
+		printf ( "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอผ\n");
+        printf ( "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอป\n");
+		printf ( "๏ฟฝ                       MENU                       ๏ฟฝ\n");
+		printf ( "๏ฟฝ                   ------------                   ๏ฟฝ\n");
+		printf ( "๏ฟฝ1. Pesan Tiket                                    ๏ฟฝ\n");
+		printf ( "๏ฟฝ2. List Antrian                                   ๏ฟฝ\n");
+		printf ( "๏ฟฝ3. Cek Studio                                     ๏ฟฝ\n");
+		printf ( "๏ฟฝ4. Keluar                                         ๏ฟฝ\n");
+		printf ( "๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอผ\n");
+		printf ( "|====================================================|\n");
+		printf ( " Pilih : ");
         scanf("%d", &pilihan);
 		
         switch (pilihan) {
@@ -52,7 +46,7 @@ int main() {
         		printf("\t========== FILM ==========\n");
 				printf("\t1. Avengers - Endgame \n");
 				for (int i = 0; i < 3; i++) {
-				printf("\t[%d] %s: %s : %s : Rp 30.000\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
+				printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i]);
 				if (i != 2) {
         			printf("");
     				}
@@ -61,7 +55,7 @@ int main() {
 
 				printf("\t2. Spider-Man - No Way Home \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("\t[%d] %s: %s : %s : Rp 35.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
         			printf("");
     				}
@@ -70,7 +64,7 @@ int main() {
 
 				printf("\t3. Gatot Kaca \n");
 				for (int i = 0; i < 3; i++) {
-    			printf("\t[%d] %s: %s : %s : Rp 40.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
+    			printf("\t[%d] %s: %s : %s : Rp 50.000\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i]);
     			if (i != 2) {
         			printf("");
     				}
@@ -83,18 +77,15 @@ int main() {
         		scanf("%d", &x);
         		printf("\t==================================\n");
                 if (strcmp(loket1.status_loket[x], "online") == 0 && pilihan == 1){
-                    printf("\tAnda memilih loket untuk film Avengers - Endgame.\n");
-                    printf("\tJadwal & studio: %s & %s \n",loket1.jadwal[x],loket1.studio[x]);
+                    printf("\tAnda memilih loket film Avengers - Endgame.\n");
+					printf("\tJadwal & studio: %s & %s \n",loket1.jadwal[x],loket1.studio[x]);
                     printf("\tYang Melayani: %s\n", loket1.nama_pekerja_loket);
-                    printf("\tStok tiket: %d\n", stok_tiket[pilihan][x]);
+                    printf("\tStok tiket: %d\n", loket1.stok_tiket[x]);
                     printf("\t-------------------------------\n");
 					printf("\tMasukkan Nama Anda: ");
     				scanf("%s", nama_pembeli);
 					printf("\tMasukkan jumlah tiket yang dibeli: ");
     				scanf("%d", &jumlah_tiket);
-    				float total_harga1 = hitung_total_harga(Harga1, jumlah_tiket);
-					printf("\tTotal harga:\t\tRp %.3f\n", total_harga1);
-					system("pause");
     				if (jumlah_tiket <= stok_tiket[pilihan][x]){
     					tambahPembeli(&loket1, jumlah_tiket, nama_pembeli, x, pilihan, stok_tiket);
 					}else{
@@ -104,19 +95,15 @@ int main() {
 					}
                     
                 } else if (strcmp(loket2.status_loket[x], "online") == 0 && pilihan == 2) {
-                    system("cls");
-					printf("\tAnda memilih loket untuk film Spider-Man - No Way Home.\n");
-					printf("\tjadwal & studio: %s & %s \n",loket1.jadwal[x],loket1.studio[x]);
-                    printf("\tYang Melayani: %s\n", loket1.nama_pekerja_loket);
-                    printf("\tStok tiket: %d\n", stok_tiket[pilihan][x]);
+					printf("\tAnda memilih loket film Spider-Man - No Way Home.\n");
+					printf("\tjadwal & studio: %s & %s \n",loket2.jadwal[x],loket2.studio[x]);
+                    printf("\tYang Melayani: %s\n", loket2.nama_pekerja_loket);
+                    printf("\tStok tiket: %d\n", loket2.stok_tiket[x]);
 					printf("\t-------------------------------\n");
 					printf("\tMasukkan Nama Anda: ");
     				scanf("%s", nama_pembeli);
 					printf("\tMasukkan jumlah tiket yang dibeli: ");
     				scanf("%d", &jumlah_tiket);
-    				float total_harga2 = hitung_total_harga(Harga2, jumlah_tiket);
-					printf("\tTotal harga:\t\tRp %.3f\n", total_harga2);
-					system("pause");
 					if (jumlah_tiket <= stok_tiket[pilihan][x]){
     					tambahPembeli(&loket2, jumlah_tiket, nama_pembeli, x, pilihan, stok_tiket);
 					}else{
@@ -126,19 +113,15 @@ int main() {
 					}
 					
                 } else if (strcmp(loket3.status_loket[x], "online") == 0 && pilihan == 3) {
-                    system("cls");
-					printf("\tAnda memilih loket untuk film Gatot Kaca.\n");
-					printf("\tjadwal & studio: %s & %s \n",loket1.jadwal[x],loket1.studio[x]);
-                    printf("\tYang Melayani: %s\n", loket1.nama_pekerja_loket);
-                    printf("\tStok tiket: %d\n", stok_tiket[pilihan][x]);
+					printf("\tAnda memilih loket film Gatot Kaca.\n");
+					printf("\tjadwal & studio: %s & %s \n",loket3.jadwal[x],loket3.studio[x]);
+                    printf("\tYang Melayani: %s\n", loket3.nama_pekerja_loket);
+                    printf("\tStok tiket: %d\n", loket3.stok_tiket[x]);
                     printf("\t-------------------------------\n");
 					printf("\tMasukkan Nama Anda: ");
     				scanf("%s", nama_pembeli);
 					printf("\tMasukkan jumlah tiket yang dibeli: ");
     				scanf("%d", &jumlah_tiket);
-    				float total_harga3 = hitung_total_harga(Harga3, jumlah_tiket);
-					printf("\tTotal harga:\t\tRp %.3f\n", total_harga3);
-					system("pause");
     				if (jumlah_tiket <= stok_tiket[pilihan][x]){
     					tambahPembeli(&loket3, jumlah_tiket, nama_pembeli, x, pilihan, stok_tiket);	
 					}else{
@@ -148,8 +131,7 @@ int main() {
 					}
 					
                 } else {
-                	system("cls");
-                    printf("\t\t\tMaaf, loket sedang offline. Silakan coba lagi nanti.\n");
+                    printf("\t\t\tMaaf, loket sedang offline/Penuh. Silakan pilih jadwal lain.\n");
                     system("pause");
                 }
                 break;
@@ -179,32 +161,35 @@ int main() {
                 
                 system("cls");
                 printf("\t====================================\n");
-				printf("\tAvengers - Endgame ");
+				printf("\tAvengers - Endgame \n");
+				printf("\tYang melayani: %s\n", loket1.nama_pekerja_loket);
 				for (int i = 0; i < 3; i++) {
-				printf("\n\t[%d] %s: %s : %s",i, loket1.jadwal[i], loket1.studio[i], loket1.status_loket[i]);
+				printf("\t[%d] %s: %s : %s : sisa kursi = %d\n",i,loket1.status_loket[i], loket1.jadwal[i], loket1.studio[i], loket1.stok_tiket[i]);
 				if (i != 2) {
-        			printf(" | ");
+        			printf(" ");
     				}
 				}
-				printf(" |\n");
+				printf(" \n");
 				printf("\t====================================\n");
-				printf("\tSpider-Man - No Way Home");
+				printf("\tSpider-Man - No Way Home\n");
+				printf("\tYang melayani: %s\n", loket2.nama_pekerja_loket);
 				for (int i = 0; i < 3; i++) {
-    			printf("\n\t[%d] %s: %s : %s",i, loket2.jadwal[i], loket2.studio[i], loket2.status_loket[i]);
+    			printf("\t[%d] %s: %s : %s : sisa kursi = %d\n",i,loket2.status_loket[i], loket2.jadwal[i], loket2.studio[i], loket2.stok_tiket[i]);
     			if (i != 2) {
-        			printf(" | ");
+        			printf(" ");
     				}
 				}
-				printf(" |\n");
+				printf(" \n");
 				printf("\t====================================\n");
-				printf("\tGatot Kaca ");
+				printf("\tGatot Kaca \n");
+				printf("\tYang melayani: %s\n", loket3.nama_pekerja_loket);
 				for (int i = 0; i < 3; i++) {
-    			printf("\n\t[%d] %s: %s : %s",i, loket3.jadwal[i], loket3.studio[i], loket3.status_loket[i]);
+    			printf("\t[%d] %s: %s : %s : sisa kursi = %d\n",i,loket3.status_loket[i], loket3.jadwal[i], loket3.studio[i], loket3.stok_tiket[i]);
     			if (i != 2) {
-        			printf(" | ");
+        			printf(" ");
     				}
 				}
-				printf(" |\n");
+				printf(" \n");
                 printf("\t====================================\n");
 				system("pause");
 				break;
